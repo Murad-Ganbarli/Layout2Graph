@@ -38,7 +38,7 @@ class TestGenerator(unittest.TestCase):
         # specify the PNG/COCO/JSON dir
         image_dir = 'doclaynet/PNG'
         label_dir = 'doclaynet/COCO'
-        ocr_dir = '/your/path/to/DocLayNet_core/JSON'
+        ocr_dir = 'doclaynet/JSON'
 
         # output config
         debug_dir = 'Debug/'
