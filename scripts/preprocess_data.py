@@ -43,7 +43,7 @@ class TestGenerator(unittest.TestCase):
         # output config
         debug_dir = 'Debug/'
         out_dir = 'Output/DocLayNet_core_graph_labels'
-        log_file = open('Log/error_DocLayNet_core.txt', 'a+')
+        log_file = open('error_DocLayNet_core.txt', 'a+')
 
         label_path_list = get_file_path_list(label_dir, ['json'])
         for label_path in label_path_list:
