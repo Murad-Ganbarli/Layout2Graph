@@ -36,14 +36,14 @@ class TestGenerator(unittest.TestCase):
 
     def test_convert_DocLayNet2Graph(self):
         # specify the PNG/COCO/JSON dir
-        image_dir = '/your/path/to/DocLayNet_core/PNG'
-        label_dir = '/your/path/to/DocLayNet_core/COCO'
+        image_dir = 'doclaynet/PNG'
+        label_dir = 'doclaynet/COCO'
         ocr_dir = '/your/path/to/DocLayNet_core/JSON'
 
         # output config
-        debug_dir = '/path/to/debug/dir'
-        out_dir = '/your/output/path/DocLayNet_core_graph_labels'
-        log_file = open('/your/debug/dir/error_DocLayNet_core.txt', 'a+')
+        debug_dir = 'Debug/'
+        out_dir = 'Output/DocLayNet_core_graph_labels'
+        log_file = open('Log/error_DocLayNet_core.txt', 'a+')
 
         label_path_list = get_file_path_list(label_dir, ['json'])
         for label_path in label_path_list:
