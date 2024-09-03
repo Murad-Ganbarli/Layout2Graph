@@ -35,15 +35,26 @@ class TestGenerator(unittest.TestCase):
                                  [120, 0, 120]]
 
     def test_convert_DocLayNet2Graph(self):
-        # specify the PNG/COCO/JSON dir
-        image_dir = 'doclaynet/PNG'
-        label_dir = 'doclaynet/COCO'
-        ocr_dir = 'doclaynet/JSON'
-
-        # output config
-        debug_dir = 'Debug/'
-        out_dir = 'Output/DocLayNet_core_graph_labels'
-        log_file = open('error_DocLayNet_core.txt', 'a+')
+        if 'KAGGLE_KERNEL_RUN_TYPE' in os.environ:
+            base_dir = '/kaggle/input/doclaynet/'  # Adjust the dataset name accordingly
+            debug_dir = '/kaggle/working/Debug/'
+            out_dir = '/kaggle/working/Output/DocLayNet_core_graph_labels'
+            log_path = '/kaggle/working/error_DocLayNet_core.txt'
+        else:
+            base_dir = 'doclaynet/'  # Local directory
+            debug_dir = 'Debug/'
+            out_dir = 'Output/DocLayNet_core_graph_labels'
+            log_path = 'error_DocLayNet_core.txt'
+        
+        # Specify the PNG/COCO/JSON directories
+        image_dir = os.path.join(base_dir, 'PNG')
+        label_dir = os.path.join(base_dir, 'COCO')
+        ocr_dir = os.path.join(base_dir, 'JSON')
+        
+        # Output configuration
+        os.makedirs(debug_dir, exist_ok=True)
+        os.makedirs(out_dir, exist_ok=True)
+        log_file = open(log_path, 'a+')
 
         label_path_list = get_file_path_list(label_dir, ['json'])
         for label_path in label_path_list:
