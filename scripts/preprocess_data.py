@@ -36,7 +36,7 @@ class TestGenerator(unittest.TestCase):
 
     def test_convert_DocLayNet2Graph(self):
         if 'KAGGLE_KERNEL_RUN_TYPE' in os.environ:
-            base_dir = '/kaggle/input/doclaynet/'  # Adjust the dataset name accordingly
+            base_dir = '/kaggle/working/doclaynet/'  # Adjust the dataset name accordingly
             debug_dir = '/kaggle/working/Debug/'
             out_dir = '/kaggle/working/Output/DocLayNet_core_graph_labels'
             log_path = '/kaggle/working/error_DocLayNet_core.txt'
