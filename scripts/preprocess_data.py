@@ -40,16 +40,20 @@ class TestGenerator(unittest.TestCase):
             debug_dir = '/kaggle/working/Debug/'
             out_dir = '/kaggle/working/Output/DocLayNet_core_graph_labels'
             log_path = '/kaggle/working/error_DocLayNet_core.txt'
+            base_dir_input = '/kaggle/input/doclaynet'
+            
+            image_dir = os.path.join(base_dir_input, 'PNG')
+            label_dir = os.path.join(base_dir_input, 'COCO')
         else:
             base_dir = 'doclaynet/'  # Local directory
             debug_dir = 'Debug/'
             out_dir = 'Output/DocLayNet_core_graph_labels'
             log_path = 'error_DocLayNet_core.txt'
-        
-        # Specify the PNG/COCO/JSON directories
-        image_dir = os.path.join(base_dir, 'PNG')
-        label_dir = os.path.join(base_dir, 'COCO')
-        ocr_dir = os.path.join(base_dir, 'JSON')
+            
+            # Specify the PNG/COCO/JSON directories
+            image_dir = os.path.join(base_dir, 'PNG')
+            label_dir = os.path.join(base_dir, 'COCO')
+            ocr_dir = os.path.join(base_dir, 'JSON')
         
         # Output configuration
         os.makedirs(debug_dir, exist_ok=True)
