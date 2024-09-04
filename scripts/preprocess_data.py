@@ -36,14 +36,13 @@ class TestGenerator(unittest.TestCase):
 
     def test_convert_DocLayNet2Graph(self):
         if 'KAGGLE_KERNEL_RUN_TYPE' in os.environ:
-            base_dir = '/kaggle/working/doclaynet/'  # Adjust the dataset name accordingly
+            base_dir = '/kaggle/input/doclaynet/'  # Adjust the dataset name accordingly
             debug_dir = '/kaggle/working/Debug/'
             out_dir = '/kaggle/working/Output/DocLayNet_core_graph_labels'
             log_path = '/kaggle/working/error_DocLayNet_core.txt'
-            base_dir_input = '/kaggle/input/doclaynet'
             
-            image_dir = os.path.join(base_dir_input, 'PNG')
-            label_dir = os.path.join(base_dir_input, 'COCO')
+            image_dir = os.path.join(base_dir, 'PNG')
+            label_dir = os.path.join(base_dir, 'COCO')
         else:
             base_dir = 'doclaynet/'  # Local directory
             debug_dir = 'Debug/'
@@ -51,10 +50,10 @@ class TestGenerator(unittest.TestCase):
             log_path = 'error_DocLayNet_core.txt'
             
             # Specify the PNG/COCO/JSON directories
-            image_dir = os.path.join(base_dir, 'PNG')
-            label_dir = os.path.join(base_dir, 'COCO')
-            ocr_dir = os.path.join(base_dir, 'JSON')
-        
+        image_dir = os.path.join(base_dir, 'PNG')
+        label_dir = os.path.join(base_dir, 'COCO')
+            
+        ocr_dir = os.path.join(base_dir, 'JSON')
         # Output configuration
         os.makedirs(debug_dir, exist_ok=True)
         os.makedirs(out_dir, exist_ok=True)
