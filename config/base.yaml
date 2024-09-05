@@ -1,5 +1,6 @@
 name: base
 model:
+  model_path: /models
   type: resnet18
   mixed_precision: "no" # "["no", "fp16", "bf16"]
   # Whether to use mixed precision from accelerator. Choose between fp16 and bf16 (bfloat16). Bf16 requires PyTorch >="
